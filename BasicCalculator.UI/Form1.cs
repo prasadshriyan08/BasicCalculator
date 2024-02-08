@@ -105,6 +105,15 @@ namespace BasicCalculator.UI
             clickedButtonType = ClickedButtonType.Operator;
         }
 
+        //event to handle text edit operation
+        private void txt_Total_MouseLeave(object sender, EventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+
+            ResultValue = tb.Text;
+            _currentNumber = Double.Parse(tb.Text);
+        }
+
         //function to calculate the values
         private void Calculate()
         {
@@ -126,12 +135,5 @@ namespace BasicCalculator.UI
             ResultValue = "0";
         }
 
-        private void txt_Total_MouseLeave(object sender, EventArgs e)
-        {
-            TextBox tb = (TextBox)sender;
-
-            ResultValue = tb.Text;
-            _currentNumber = Double.Parse(tb.Text);
-        }
     }
 }
